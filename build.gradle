@@ -9,9 +9,44 @@ repositories {
     mavenCentral()
 }
 
+test {
+    useJUnitPlatform()
+}
+
+ext {
+    dependencyVersions = [
+            selenium        : '3.14.0',
+            webdrivermanager: '3.0.0',
+            logback         : '1.2.3',
+            reportng        : '1.1.2',
+            testng          : '6.14.3',
+            guice           : '4.2.0',
+            jackson         : '2.10.0',
+            joda            : '2.10.4',
+            restAssured     : '4.4.0',
+            awaitility      : '3.0.0',
+            hamcrest        : '2.2',
+            elasticsearch   : '7.16.0',
+            log4jtoslf4j    : '2.8.2',
+            commonCsv    : '1.9.0'
+    ]
+}
+
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: dependencyVersions.selenium
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: dependencyVersions.webdrivermanager
+    implementation group: 'org.testng', name: 'testng', version: dependencyVersions.testng
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: dependencyVersions.jackson
+    implementation group: 'joda-time', name: 'joda-time', version: dependencyVersions.joda
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: dependencyVersions.restAssured
+    implementation group: 'org.awaitility', name: 'awaitility', version: dependencyVersions.awaitility
+    implementation group: 'org.hamcrest', name: 'hamcrest', version: dependencyVersions.hamcrest
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: dependencyVersions.logback
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: dependencyVersions.log4jtoslf4j
+    implementation group: 'org.apache.commons', name: 'commons-csv', version: dependencyVersions.commonCsv
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.3'
+    implementation group: 'com.fasterxml.jackson.datatype', name:'jackson-datatype-joda', version: '2.13.2'
+    implementation group: 'org.elasticsearch.client', name: 'elasticsearch-rest-high-level-client', version: dependencyVersions.elasticsearch
 }
 
 test {
