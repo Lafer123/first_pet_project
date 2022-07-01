@@ -41,7 +41,7 @@ public class StarshipBaseAPITest {
         assertEquals(response.getName(), STARSHIP_TITLE);
     }
 
-    @Test(description = "Verify the ET request will return 200 status code")
+    @Test(description = "Verify the GET request will return 200 status code")
     public void verifyCorrectNameField() {
         StarshipResponse response = given()
                 .contentType(ContentType.JSON)
