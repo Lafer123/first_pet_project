@@ -1,4 +1,4 @@
-package response;
+package API.response;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

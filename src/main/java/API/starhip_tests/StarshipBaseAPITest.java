@@ -1,14 +1,14 @@
-package API;
+package API.starhip_tests;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import response.OptionsResponse;
-import response.StarshipResponse;
+import API.response.OptionsResponse;
+import API.response.StarshipResponse;
 
-import static Constants.Constants.*;
+import static API.Constants.Constants.*;
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 
