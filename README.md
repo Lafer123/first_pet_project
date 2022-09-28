@@ -1,4 +1,4 @@
-Test tasks for QAMadness;
+The first pet project
 
 This repository consist of:
 
