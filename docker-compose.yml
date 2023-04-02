@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  selenoid:
+    image: aerokube/selenoid:latest-release
+    container_name: selenoid
+    network_mode: container-network
+    ports:
+      - "4444:4444"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./config/:/etc/selenoid/"
+      - "./video/:/opt/selenoid/video/"
+
+  selenoid-ui:
+    image: aerokube/selenoid-ui
+    container_name: selenoid-ui
+    network_mode: container-network
+    ports:
+      - "8080:8080"
+    links:
+      - selenoid
+    command: ["--selenoid-uri", "http://selenoid:4444"]
